@@ -1,0 +1,9 @@
+{
+  "name": "leave-flow-mirror",
+  "version": "1.0.0",
+  "private": true,
+  "description": "原站前端镜像（源码零改动）+ 本地模拟接口服务",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

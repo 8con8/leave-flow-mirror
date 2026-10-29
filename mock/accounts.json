@@ -1,0 +1,65 @@
+{
+  "note": "本地模拟账号表。登录时 姓名 / 拼音账号 / userId 任一都能匹配，密码随便填。改完刷新页面生效。",
+  "accounts": [
+    {
+      "userId": "1001",
+      "userName": "本地管理员",
+      "account": "admin",
+      "userRealName": "本地管理员",
+      "orgId": "1",
+      "orgName": "本地测试学校",
+      "deptId": "10",
+      "deptName": "信息中心",
+      "roleId": "1",
+      "roleName": "管理员",
+      "roles": "RS001,RS002",
+      "isAdmin": true,
+      "photo": ""
+    },
+    {
+      "userId": "2001",
+      "userName": "李永熙",
+      "account": "liyongxi",
+      "userRealName": "李永熙",
+      "orgId": "1",
+      "orgName": "本地测试学校",
+      "deptId": "20",
+      "deptName": "教务处",
+      "roleId": "2",
+      "roleName": "老师",
+      "roles": "RS001,RS002",
+      "isAdmin": false,
+      "photo": ""
+    },
+    {
+      "userId": "3001",
+      "userName": "曾志贤",
+      "account": "zengzhixian",
+      "userRealName": "曾志贤",
+      "orgId": "1",
+      "orgName": "本地测试学校",
+      "deptId": "30",
+      "deptName": "计算机学院 2024级1班",
+      "roleId": "3",
+      "roleName": "学生",
+      "roles": "RS001,RS002",
+      "isAdmin": false,
+      "photo": ""
+    },
+    {
+      "userId": "3002",
+      "userName": "谢哮",
+      "account": "xiexiao",
+      "userRealName": "谢哮",
+      "orgId": "1",
+      "orgName": "本地测试学校",
+      "deptId": "30",
+      "deptName": "计算机学院 2024级1班",
+      "roleId": "3",
+      "roleName": "学生",
+      "roles": "RS001,RS002",
+      "isAdmin": false,
+      "photo": ""
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "rules": [
+    {
+      "match": "^/bpm/rest/processes/tasks/form/json",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": {
+          "docUnid": "2LW22xRFv3M9bHlM7EGMN",
+          "processId": "P001",
+          "WF_FormNumber": "F001",
+          "WF_FormName": "中职学生请假流程",
+          "WF_DocStatus": "2",
+          "WF_IsProcessAdmin": "false",
+          "isNewDocFlag": "false",
+          "showFlowFileLog": "0",
+          "WF_ApplyUser": "曾志贤",
+          "formJson": "{}",
+          "formData": {},
+          "nodes": []
+        }
+      }
+    },
+    {
+      "match": "^/bpm/rest/forms/config",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": {
+          "formNumber": "F001",
+          "formName": "中职学生请假流程",
+          "appId": "app01",
+          "paperWidth": 0,
+          "progressBarVWidth": 300,
+          "showFlowFileLog": "0",
+          "controls": [],
+          "formJson": "{}"
+        }
+      }
+    },
+    {
+      "match": "^/bpm/rest/apps",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": {
+          "list": [],
+          "total": 0
+        }
+      }
+    },
+    {
+      "match": "^/bpm/rest/org/departments",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": [
+          {
+            "id": "1",
+            "key": "1",
+            "deptId": "1",
+            "name": "本地测试学校",
+            "deptName": "本地测试学校",
+            "children": [
+              {
+                "id": "20",
+                "key": "20",
+                "deptId": "20",
+                "name": "教务处",
+                "deptName": "教务处"
+              },
+              {
+                "id": "30",
+                "key": "30",
+                "deptId": "30",
+                "name": "计算机学院 2024级1班",
+                "deptName": "计算机学院 2024级1班"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "match": "^/(bpm/rest/)?users/selector",
+      "method": "GET",
+      "dynamic": "accounts"
+    },
+    {
+      "match": "^/bpm/rest/org/users/selector",
+      "method": "GET",
+      "dynamic": "accounts"
+    },
+    {
+      "match": "^/bpm/rest/analyse/home/statistics",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": {
+          "transactionApplyCount": 0,
+          "handledCount": 0,
+          "completionRate": "0%",
+          "avgElapsedTime": 0,
+          "shortestProcessName": "-",
+          "longestProcessName": "-",
+          "processTypeList": [],
+          "processList": []
+        }
+      }
+    },
+    {
+      "match": "^/bpm/rest/analyse/processes/type/statistics",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": []
+      }
+    },
+    {
+      "match": "^/bpm/rest/analyse/process/top/info",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": []
+      }
+    },
+    {
+      "match": "^/bpm/rest/analyze/department/list",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": {
+          "records": [
+            {
+              "id": "20",
+              "name": "教务处",
+              "deptName": "教务处"
+            },
+            {
+              "id": "30",
+              "name": "计算机学院 2024级1班",
+              "deptName": "计算机学院 2024级1班"
+            }
+          ],
+          "total": 2,
+          "pageNum": 1,
+          "pageSize": 10
+        }
+      }
+    },
+    {
+      "match": "^/ng/captcha/status",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": false
+      }
+    },
+    {
+      "match": "^/bpm/rest/platform/setting\\?.*configId=SystemLogo,browserLogo,SystemName,showAIAssistant",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": {
+          "SystemName": "本地测试系统",
+          "SystemLogo": "",
+          "browserLogo": "",
+          "showAIAssistant": "false"
+        }
+      }
+    },
+    {
+      "match": "^/bpm/rest/platform/setting\\?.*configId=systemColor",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": {
+          "configValue": "#1890ff"
+        }
+      }
+    },
+    {
+      "match": "^/bpm/rest/platform/setting\\?.*configId=SystemName",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": {
+          "configValue": "本地测试系统"
+        }
+      }
+    },
+    {
+      "match": "^/bpm/rest/platform/setting",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": {
+          "configValue": ""
+        }
+      }
+    },
+    {
+      "match": "^/bpm/rest/common/execute\\?.*wf_num=T_S001_005",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": []
+      }
+    },
+    {
+      "match": "^/bpm/rest/common/execute",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": {}
+      }
+    },
+    {
+      "match": "^/bpm/rest/common/aes/transport",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": {}
+      }
+    },
+    {
+      "match": "^/login",
+      "method": "POST",
+      "cookie": "Authorization=mock-token-0001; Path=/",
+      "dynamic": "echoUser"
+    },
+    {
+      "match": "^/tryLoginUserInfo",
+      "method": "POST",
+      "dynamic": "tokenGate"
+    },
+    {
+      "match": "^/bpm/rest/setting/roles",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": {
+          "roles": "RS001,RS002"
+        }
+      }
+    },
+    {
+      "match": "^/logout",
+      "method": "GET",
+      "body": {
+        "meta": {
+          "success": true,
+          "statusCode": 200
+        },
+        "data": {}
+      }
+    }
+  ]
+}

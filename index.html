@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang=zh-CN dropeffect=none class="js is-AppPromotionBarVisible cssanimations csstransforms csstransitions flexbox touchevents mobile"><head><meta http-equiv=Content-Type content=text/html charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title></title><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=black><meta name=format-detection content="telephone=no"><script type=text/javascript>//解决ie9不支持origin
+            if (!window.location.origin) {
+                window.location.origin =
+                    window.location.protocol +
+                    "//" +
+                    window.location.hostname +
+                    (window.location.port ? ":" + window.location.port : "");
+            }
+            // 解决 IE8、IE9 不支持 console 问题
+            window.console =
+                window.console ||
+                (function () {
+                    var c = {};
+                    c.log =
+                        c.warn =
+                        c.debug =
+                        c.info =
+                        c.error =
+                        c.time =
+                        c.dir =
+                        c.profile =
+                        c.clear =
+                        c.exception =
+                        c.trace =
+                        c.assert =
+                            function () {};
+                    return c;
+                })();
+            if (!window.Promise) {
+                document.writeln(
+                    '<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"' +
+                        ">" +
+                        "<" +
+                        "/" +
+                        "script>"
+                );
+            }
+            window.disRootPath = "false"; // 访问根路径不允许访问系统界面，而是要访问/#/
+            (function () {
+                // 检查当前 URL 是否包含 /#/
+                if (window.disRootPath == "true" && !window.location.hash && window.location.pathname == "/") {
+                    // 如果没有 /#/ 且不是version.txt，显示 404
+                    window.location.href = "/404.html";
+                    return;
+                }
+            })();
+
+            // 单点配置
+            try {
+                window.casStatus = false;
+            } catch (error) {
+                window.casStatus = false;
+            }
+            try {
+                window.cas0Status = _cas0Status;
+            } catch (error) {
+                window.cas0Status = false;
+            }
+            window.pdf_batch = "loginAddr"; // 批量导出PDF按钮显示隐藏
+            window.casLogoutUrl = "";
+            window.gateway_version = ""; //3-新网关
+            window.iacp_version = ""; //3-权限平台3.0
+            window.casLoginUrl = "";
+            window.lytype = ""; // 判断是否使用cocall验证， cocall-使用cocall，需要走单独的网关验证
+            window.pcMobileView = ""; // 企业微信/钉钉PC端使用移动端样式，可选值：wecom,dingtalk
+
+            // 上海浦东职业技术需要，三方单点对接参数
+            window.client_id = "_auth2_client_id";
+            window.scope = "_auth2_scope";
+            window.tokenFormCookie = "true";
+            window.aiAgentEnvSettings = "false";
+            // window.aiAgentEnvSettings = "true";
+            window.aiOpenCodeCloud = "false";
+            // 是否配置 LANGCHAINAGENT（生产由 run.sh 按环境变量注入 true/false）
+            window.langchainAgentEnabled = "false";
+            // window.langchainAgentEnabled = "true";
+            // USEDIFY=true 时 ask/agent 仍走 Dify（生产由 run.sh 注入 true/false）
+            window.useDify = "false";
+            // window.useDify = "true";
+
+            // 判断是否被iframe嵌套
+            if (window.frames.length != parent.frames.length) {
+                window.inIframe = true;
+            } else {
+                window.inIframe = false;
+            }
+            // 浏览器地址栏带isDebug参数则开启vconsole
+            if (window.location.href.includes("isDebug=true")) {
+                const node = document.createElement("script");
+                node.type = "text/javascript";
+                node.src = "assets/js/vconsole.min.js";
+                node.onload = () => {
+                    new VConsole();
+                };
+                document.head.appendChild(node);
+            }</script><link href=./assets/css/chunk-antd.2405a5ee80aecf2616ee.css rel=stylesheet><link href=./assets/css/chunk-libs.a66a233e3d37e3a0dc41.css rel=stylesheet><link href=./assets/css/app.f3338410e77964715e24.css rel=stylesheet></head><body><div id=root-bpm class=root-bpm style="height: 100%"></div><div id=scrollDiv style="overflow: scroll; width: 100%; height: 100%; position: absolute; top: -9999px; z-index: -9999"></div><script>// 加载css
+            function loadCSS(url) {
+                var head = document.getElementsByTagName("head")[0];
+                var link = document.createElement("link");
+                link.type = "text/css";
+                link.rel = "stylesheet";
+                link.href = url;
+                head.appendChild(link);
+            }
+            function createScript(url) {
+                const node = document.createElement("script");
+                node.type = "text/javascript";
+                node.src = url;
+                document.body.appendChild(node);
+            }
+            window.ydConfig = {
+                ydFontVersion: "yd@1.1.0",
+                ybtFontVersion: "ybt@1.0.0",
+            };
+            // 作为子应用时，解决字体图标路径问题
+            window.onload = (function () {
+                const baseUrl = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__ || "";
+                if (baseUrl) {
+                    const ydFontVersion = window.ydConfig.ydFontVersion;
+                    const ybtFontVersion = window.ydConfig.ybtFontVersion;
+                    loadCSS(baseUrl + "assets/font/" + ydFontVersion + "/iconfont.css");
+                    loadCSS(baseUrl + "assets/font/" + ybtFontVersion + "/iconfont.css");
+                    createScript(baseUrl + "assets/font/" + ydFontVersion + "/iconfont.js");
+                    createScript(baseUrl + "assets/font/" + ybtFontVersion + "/iconfont.js");
+                }
+            })();
+
+            // 语言检测和样式类名设置
+            function setLanguageClass() {
+                const rootDiv = document.getElementById("root-bpm");
+                if (rootDiv) {
+                    // 获取缓存的语言设置
+                    const currentLang = localStorage.getItem("lang");
+
+                    // 移除之前的语言类名
+                    rootDiv.classList.remove("yd-lang-zh", "yd-lang-en");
+
+                    // 根据语言添加对应的类名
+                    if (currentLang === "en") {
+                        rootDiv.classList.add("yd-lang-en");
+                    } else {
+                        rootDiv.classList.add("yd-lang-zh");
+                    }
+                }
+            }
+
+            // 页面加载时设置语言类名
+            setLanguageClass();
+
+            // 监听语言变化
+            window.addEventListener("storage", function (e) {
+                if (e.key === "lang" || e.key === "") {
+                    setLanguageClass();
+                }
+            });</script><script src=./assets/js/runtime.e02b8aafcfb026053a46.js></script><script src=./assets/js/chunk/chunk-antd.72f55d89294c5ca2674c.chunk.js></script><script src=./assets/js/chunk/chunk-libs.d32be75808ea221ff5fd.chunk.js></script><script src=./assets/js/chunk/app.b18a969b53f295074155.chunk.js></script></body></html>
