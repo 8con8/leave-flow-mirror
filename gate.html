@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>正在载入…</title>
+<style>
+  body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;
+       font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f0f2f5;color:#666}
+  .box{text-align:center;font-size:14px;line-height:1.9}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#1890ff;
+       animation:b .8s infinite alternate;margin-right:6px}
+  @keyframes b{from{opacity:.25}to{opacity:1}}
+  a{color:#1890ff}
+</style>
+</head>
+<body>
+<div class="box">
+  <div><span class="dot"></span>正在启动本地模拟环境…</div>
+  <div id="msg" style="color:#999;font-size:12px;margin-top:8px">首次进入需要几百毫秒</div>
+</div>
+<script>
+/* 作用：注册 Service Worker（假后端），装好后再跳进真正的站点。
+   站点本身（index.html）一个字节都没改。 */
+(function () {
+  var msg = document.getElementById('msg');
+
+  function enter() { location.replace('./#/login'); }
+
+  if (!('serviceWorker' in navigator)) {
+    msg.innerHTML = '当前浏览器不支持 Service Worker，<a href="./">点这里直接进入</a>（登录会失效）';
+    return;
+  }
+
+  navigator.serviceWorker.register('./sw.js', { scope: './' })
+    .then(function () { return navigator.serviceWorker.ready; })
+    .then(function () {
+      msg.textContent = '环境就绪，正在跳转…';
+      setTimeout(enter, 150);
+    })
+    .catch(function (e) {
+      msg.innerHTML = '模拟环境启动失败：' + e.message + '<br><a href="./">仍然直接进入</a>';
+    });
+
+  setTimeout(function () {
+    if (location.pathname.indexOf('gate') >= 0) enter();
+  }, 3000);
+})();
+</script>
+</body>
+</html>
